@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: jihed.chaabane
+      changes:
+        - createTable:
+            tableName: liquibase_roles
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+        - sql:
+            dbms: postgresql
+            sql: GRANT ALL ON TABLE liquibase_roles TO ${database.name};

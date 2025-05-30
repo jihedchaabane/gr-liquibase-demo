@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: jihed.chaabane
+      changes:
+        - insert:
+            tableName: liquibase_roles
+            columns:
+              - column:
+                  name: name
+                  value: ADMIN
+        - insert:
+            tableName: liquibase_roles
+            columns:
+              - column:
+                  name: name
+                  value: USER
+        - insert:
+            tableName: liquibase_roles
+            columns:
+              - column:
+                  name: name
+                  value: CLIENT
+        - insert:
+            tableName: liquibase_roles
+            columns:
+              - column:
+                  name: name
+                  value: TEST_ROLE

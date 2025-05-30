@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 7
+      author: jihed.chaabane
+      changes:
+        - insert:
+            tableName: liquibase_users_roles
+            columns:
+              - column:
+                  name: user_id
+                  valueComputed: (SELECT id FROM liquibase_users WHERE username = 'admin')
+              - column:
+                  name: role_id
+                  valueComputed: (SELECT id FROM liquibase_roles WHERE name = 'ADMIN')
+        - insert:
+            tableName: liquibase_users_roles
+            columns:
+              - column:
+                  name: user_id
+                  valueComputed: (SELECT id FROM liquibase_users WHERE username = 'user')
+              - column:
+                  name: role_id
+                  valueComputed: (SELECT id FROM liquibase_roles WHERE name = 'USER')
+        - insert:
+            tableName: liquibase_users_roles
+            columns:
+              - column:
+                  name: user_id
+                  valueComputed: (SELECT id FROM liquibase_users WHERE username = 'client')
+              - column:
+                  name: role_id
+                  valueComputed: (SELECT id FROM liquibase_roles WHERE name = 'CLIENT')
