@@ -13,3 +13,5 @@ databaseChangeLog:
       file: db/changelog/changes/6-dml-users.yml
   - include:
       file: db/changelog/changes/7-dml-users-roles.yml
+  - include:
+      file: db/changelog/changes/8-ddl-persistent_logins.yml

@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 8
+      author: jihed.chaabane
+      changes:
+        - createTable:
+            tableName: liquibase_persistent_logins
+            columns:
+              - column:
+                  name: series
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: token
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lastUsed
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+        - sql:
+            dbms: postgresql
+            sql: GRANT ALL ON TABLE liquibase_persistent_logins TO ${database.name};
