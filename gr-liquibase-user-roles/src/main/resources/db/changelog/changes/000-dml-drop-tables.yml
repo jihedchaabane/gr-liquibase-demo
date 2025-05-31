@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: jihed.chaabane
+      changes:
+#        - sql:
+#            dbms: postgresql
+#            sql: drop table IF EXISTS databasechangeloglock;
+#        - sql:
+#            dbms: postgresql
+#            sql: drop table IF EXISTS databasechangelog;
+        - sql:
+            dbms: postgresql
+            sql: drop table IF EXISTS liquibase_oauth2_registered_client;
+        - sql:
+            dbms: postgresql
+            sql: drop table IF EXISTS liquibase_persistent_logins;
+        - sql:
+            dbms: postgresql
+            sql: drop table IF EXISTS liquibase_users_roles;
+        - sql:
+            dbms: postgresql
+            sql: drop table IF EXISTS liquibase_roles;
+        - sql:
+            dbms: postgresql
+            sql: drop table IF EXISTS liquibase_users;

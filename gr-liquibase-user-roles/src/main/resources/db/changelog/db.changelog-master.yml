@@ -1,4 +1,6 @@
 databaseChangeLog:
+#  - include:
+#      file: db/changelog/changes/000-dml-drop-tables.yml
   - include:
       file: db/changelog/changes/users-roles-rememberme/changelog.yml
   - include:

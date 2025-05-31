@@ -5,10 +5,12 @@ import java.util.Set;
 
 import javax.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Table(name = "liquibase_users")
 @Data
+@ToString
 public class UserAccess {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,15 +27,9 @@ public class UserAccess {
 
 	@Column(nullable = false)
 	private boolean enabled;
-	/**
-	@ElementCollection(fetch = FetchType.EAGER)
-	@CollectionTable(name = "gr_conf_access_user_authorities", joinColumns = @JoinColumn(name = "user_id"))
-	@Column(name = "authority")
-	private Set<String> authorities;
-	*/
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-        name = "user_roles",
+        name = "liquibase_users_roles",
         joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "role_id")
     )

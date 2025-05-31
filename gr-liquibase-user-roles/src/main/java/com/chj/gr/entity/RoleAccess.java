@@ -7,8 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.ToString;
+
 @Entity
-@Table(name = "roles")
+@Table(name = "liquibase_roles")
+@Data
+@ToString
 public class RoleAccess {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,19 +22,4 @@ public class RoleAccess {
 	@Column(nullable = false, unique = true)
 	private String name;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 }
