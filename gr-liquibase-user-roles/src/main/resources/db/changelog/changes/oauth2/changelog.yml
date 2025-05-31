@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changes/oauth2/009-ddl-oauth2_registered_client.yml
+  - include:
+      file: db/changelog/changes/oauth2/010-dml-sts-oauth2-client-credentials-server-to-server-demo.yml
+  - include:
+      file: db/changelog/changes/oauth2/011-dml-gr-oauth2-demo.yml
+  - include:
+      file: db/changelog/changes/oauth2/012-dml-gr-oauth2-swagger-demo.yml

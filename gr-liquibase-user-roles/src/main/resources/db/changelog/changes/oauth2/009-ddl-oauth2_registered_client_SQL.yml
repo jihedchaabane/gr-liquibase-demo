@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 9
+      author: jihed.chaabane
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: |
+              CREATE TABLE IF NOT EXISTS liquibase_oauth2_registered_client (
+                id VARCHAR(255) NOT NULL,
+                client_id VARCHAR(255) NOT NULL,
+                client_secret VARCHAR(255),
+                scopes TEXT NOT NULL,
+                authorization_grant_types TEXT NOT NULL,
+                client_authentication_methods TEXT NOT NULL,
+                client_name VARCHAR(255) NOT NULL,
+                client_id_issued_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                token_settings TEXT NOT NULL,
+                client_settings TEXT NOT NULL,
+                client_secret_expires_at TIMESTAMP,
+                redirect_uris TEXT,
+                post_logout_redirect_uris TEXT,
+                PRIMARY KEY (id)
+              );
+        - sql:
+            dbms: postgresql
+            sql: GRANT ALL ON TABLE liquibase_oauth2_registered_client TO ${database.name};

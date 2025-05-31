@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changes/users-roles-rememberme/001-ddl-roles.yml
+  - include:
+      file: db/changelog/changes/users-roles-rememberme/002-ddl-users.yml
+  - include:
+      file: db/changelog/changes/users-roles-rememberme/003-ddl-users-roles.yml
+  - include:
+      file: db/changelog/changes/users-roles-rememberme/004-dml-roles.yml
+  - include:
+      file: db/changelog/changes/users-roles-rememberme/005-dml-update-delete.yml
+  - include:
+      file: db/changelog/changes/users-roles-rememberme/006-dml-users.yml
+  - include:
+      file: db/changelog/changes/users-roles-rememberme/007-dml-users-roles.yml
+  - include:
+      file: db/changelog/changes/users-roles-rememberme/008-ddl-persistent_logins.yml

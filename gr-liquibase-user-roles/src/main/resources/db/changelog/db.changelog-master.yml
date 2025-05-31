@@ -1,17 +1,5 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changes/1-ddl-roles.yml
+      file: db/changelog/changes/users-roles-rememberme/changelog.yml
   - include:
-      file: db/changelog/changes/2-ddl-users.yml
-  - include:
-      file: db/changelog/changes/3-ddl-users-roles.yml
-  - include:
-      file: db/changelog/changes/4-dml-roles.yml
-  - include:
-      file: db/changelog/changes/5-dml-update-delete.yml
-  - include:
-      file: db/changelog/changes/6-dml-users.yml
-  - include:
-      file: db/changelog/changes/7-dml-users-roles.yml
-  - include:
-      file: db/changelog/changes/8-ddl-persistent_logins.yml
+      file: db/changelog/changes/oauth2/changelog.yml
