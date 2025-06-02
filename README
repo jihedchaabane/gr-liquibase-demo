@@ -18,7 +18,7 @@ mvn liquibase:update ^
     -Dliquibase.username=postgres_data_source ^
     -Dliquibase.password=postgres_data_source ^
     -Dliquibase.driver=org.postgresql.Driver ^
-    -Ddatabase.name=postgres_data_source REM
+    -Ddatabase.name=postgres_data_source
 --------------------------------------------------------------------------------------
 OR:
 
