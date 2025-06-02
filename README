@@ -1,0 +1,40 @@
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+Dry Run: Prévisualiser les changements sans les appliquer :
+mvn liquibase:updateSQL ^
+    -Dliquibase.changeLogFile=src/main/resources/db/changelog/db.changelog-master.yml ^
+    -Dliquibase.url=jdbc:postgresql://10.0.0.137:5432/postgres_data_source ^
+    -Dliquibase.username=postgres_data_source ^
+    -Dliquibase.password=postgres_data_source ^
+    -Dliquibase.driver=org.postgresql.Driver
+
+==> Génére les SQL qui vont être éxecutés dans : gr-liquibase-user-roles\target\liquibase\migrate.sql
+--------------------------------------------------------------------------------------
+Run: Appliquer les changements : 
+mvn liquibase:update ^
+    -Dliquibase.changeLogFile=src/main/resources/db/changelog/db.changelog-master.yml ^
+    -Dliquibase.url=jdbc:postgresql://10.0.0.137:5432/postgres_data_source ^
+    -Dliquibase.username=postgres_data_source ^
+    -Dliquibase.password=postgres_data_source ^
+    -Dliquibase.driver=org.postgresql.Driver
+--------------------------------------------------------------------------------------
+OR:
+
+<build>
+	<plugins>
+        <!-- Liquibase Maven Plugin -->
+        <plugin>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-maven-plugin</artifactId>
+            <version>${liquibase.version}</version>
+            <configuration>
+                <changeLogFile>src/main/resources/db/changelog/db.changelog-master.yml</changeLogFile>
+                <url>jdbc:postgresql://10.0.0.137:5432/postgres_data_source</url>
+				<username>postgres_data_source</username>
+				<password>postgres_data_source</password>
+				<driver>org.postgresql.Driver</driver>
+            </configuration>
+        </plugin>
+	</plugins>
+</build>
+--------------------------------------------------------------------------------------
