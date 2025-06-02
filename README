@@ -6,7 +6,8 @@ mvn liquibase:updateSQL ^
     -Dliquibase.url=jdbc:postgresql://10.0.0.137:5432/postgres_data_source ^
     -Dliquibase.username=postgres_data_source ^
     -Dliquibase.password=postgres_data_source ^
-    -Dliquibase.driver=org.postgresql.Driver
+    -Dliquibase.driver=org.postgresql.Driver ^
+    -Ddatabase.name=postgres_data_source
 
 ==> Génére les SQL qui vont être éxecutés dans : gr-liquibase-user-roles\target\liquibase\migrate.sql
 --------------------------------------------------------------------------------------
@@ -16,7 +17,8 @@ mvn liquibase:update ^
     -Dliquibase.url=jdbc:postgresql://10.0.0.137:5432/postgres_data_source ^
     -Dliquibase.username=postgres_data_source ^
     -Dliquibase.password=postgres_data_source ^
-    -Dliquibase.driver=org.postgresql.Driver
+    -Dliquibase.driver=org.postgresql.Driver ^
+    -Ddatabase.name=postgres_data_source REM
 --------------------------------------------------------------------------------------
 OR:
 
@@ -37,4 +39,12 @@ OR:
         </plugin>
 	</plugins>
 </build>
+--------------------------------------------------------------------------------------
+drop table IF EXISTS databasechangeloglock;
+drop table IF EXISTS databasechangelog;
+drop table IF EXISTS liquibase_oauth2_registered_client;
+drop table IF EXISTS liquibase_persistent_logins;
+drop table IF EXISTS liquibase_users_roles;
+drop table IF EXISTS liquibase_roles;
+drop table IF EXISTS liquibase_users;
 --------------------------------------------------------------------------------------
